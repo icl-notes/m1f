@@ -1,0 +1,529 @@
+%using document class from KOMA-Script
+\documentclass{scrartcl}
+\title{M1F Summary Notes}
+\subtitle{JMC Year 1, 2017/2018 syllabus}
+\date{}
+\author{Fawaz Shah}
+
+% Packages for adding hyperlinks to table of contents
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+}
+
+%package that allows aligned equations
+\usepackage{amsmath}
+
+%package that allows notation for extra mathematical symbols
+\usepackage{amssymb}
+
+%new commands for popular sets for ease of use
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+% renaming command to writing vectors in bold notation
+\renewcommand{\vec}[1]{\mathbf{#1}}
+
+%package for managing images
+\usepackage{graphicx}
+\graphicspath{ {img/} }
+
+%package for managing hyperlinks
+\usepackage{hyperref}
+
+%package for added blue colored boxes
+\usepackage[most]{tcolorbox}
+
+%package that allowed removing indent from enumerate environment
+\usepackage{enumitem}
+
+%package that allows for negating nearly any symbol
+\usepackage{centernot}
+
+\begin{document}
+\large
+\maketitle
+\noindent This document contains a list of definitions and a list of theorems.
+\\\\
+Note that the exam will probably require you to PROVE some of these theorems, so you should refer back to the original notes for the proofs.
+\\\\
+Boxes cover content in more detail. Titles of some theorems are given in italics.
+\tableofcontents
+\newpage
+
+\section{Definitions}
+
+\paragraph{Arbitrary union}
+We can define the arbitrary union
+\begin{equation}
+\bigcup_{i \in I} X_{i}
+\end{equation}
+to be the union of all sets $ X_{i} $.
+
+\paragraph{Arbitrary intersection}
+We can define the arbitrary intersection
+\begin{equation}
+\bigcap_{i \in I} X_{i}
+\end{equation}
+to be the intersection of all sets $ X_{i} $.
+
+\paragraph{Modulus (complex number)}
+The modulus of $ z = x + iy $ is defined as:
+\begin{equation}
+|z| = \sqrt{x^{2} + y^{2}}
+\end{equation}
+
+\paragraph{Argument (complex number)}
+The argument of $ z = x + iy $ is defined as:
+\begin{equation}
+\arg(z) = \arctan(\frac{y}{x})
+\end{equation}
+
+\paragraph{Fundamental Theorem of Algebra}
+If a polynomial is of degree $ n $ then it has $ n $ roots in the complex plane.
+
+\paragraph{Rational}
+A number is rational if it can be expressed in the form $ \frac{p}{q} $, where $ p, q \in \Z $ and $ \gcd(p, q) = 1 $.
+
+\paragraph{Root of unity}
+Any $ z $ that is a solution to $ z^{n} = 1 $.
+
+\paragraph{"Dense"}
+A set $ S $ is dense in $ T $ if for any $ t_{1}, t_{2} \in T $ there exists an $ s \in S $ such that $ t_{1} < s < t_{2} $
+
+\paragraph{Supremum}
+A real number $ b $ is the sup (least upper bound) of a set $ S $ if:
+\begin{itemize}
+\item every $ s \in S $ is less than $ b $ (i.e. $ b $ is an upper bound)
+\item $ b $ is less than every other upper bound of $ S $
+\end{itemize}
+
+\paragraph{Infimum}
+A real number $ b $ is the inf (greatest lower bound) of a set $ S $ if:
+\begin{itemize}
+\item every $ s \in S $ is greater than $ b $ (i.e. $ b $ is a lower bound)
+\item $ b $ is greater than every other lower bound of $ S $
+\end{itemize}
+
+\paragraph{Bounded above}
+A set is bounded above if it has an upper bound.
+
+\paragraph{Bounded below}
+A set is bounded below if it has a lower bound.
+
+\paragraph{Coprime}
+We say two integers $ a $ and $ b $ are coprime if $ \gcd(a, b) = 1 $.
+
+\paragraph{Fundamental Theorem of Arithmetic}
+Every integer greater than 1 can be expressed as a unique product of primes.
+
+\paragraph{$ \equiv$ (congruence operator)}
+We say $ a \equiv b \mod m $ if $ (a - b) $ is a multiple of $ m $.
+
+\paragraph{Binary relation}
+A binary relation $ \sim $ on a set $ S $ is a subset of $ S \times S $.
+
+\paragraph{Reflexive}
+A binary relation $ \sim $ is reflexive if for any $ a \in S $:
+\begin{equation}
+a \sim a
+\end{equation}
+
+\paragraph{Symmetric}
+A binary relation $ \sim $ is symmetric if:
+\begin{equation}
+a \sim b \Leftrightarrow b \sim a
+\end{equation}
+
+\paragraph{Transitive}
+A binary relation $ \sim $ is transitive if:
+\begin{equation}
+a \sim b \land b \sim c \Rightarrow a \sim c
+\end{equation}
+
+\paragraph{Equivalence relation}
+A binary relation $ \sim $ is an equivalence relation iff it is reflexive, symmetric and transitive.
+
+\paragraph{Equivalence class}
+The equivalence class of $ b \in S $ is the set of all $ s \in S $ such that $ b \sim s $.
+
+\paragraph{Image}
+The image of a function $ f: A \to B $ is the set of all $ b \in B $ such that $ b = f(a) $ for some $ a \in A $.
+
+\paragraph{Injective}
+A function $ f : A \to B $ is injective if every $ b \in B $ has at MOST one $ a \in A $ that maps to it. Mathematically:
+\begin{equation}
+\forall x, y \in A \quad f(x) = f(y) \Rightarrow x = y
+\end{equation}
+
+\paragraph{Surjective}
+A function $ f : A \to B $ is surjective if every $ b \in B $ has at LEAST one $ a \in A $ that maps to it. Mathematically:
+\begin{equation}
+\forall b \in B \quad \exists a \in A \quad s.t. \quad f(a) = b
+\end{equation}
+
+\paragraph{Bijective}
+A function $ f : A \to B $ is bijective iff it is both surjective and injective.
+
+\paragraph{(Two-sided) inverse function}
+The inverse of a function $ f : A \to B $ is defined as $ f^{-1} : B \to A $, and satisfies:
+\begin{align}
+f^{-1} \circ f \equiv f \circ f^{-1} \equiv Id_{A}
+\end{align}
+
+\paragraph{Power set}
+The power set of $ S $ is the set of all subsets of $ S $.
+
+\paragraph{Countably infinite}
+An infinitely-sized set $ S $ is countably infinite if there exists a bijection $ f : \Z_{> 0} \to S $.
+
+\section{Theorems}
+
+\subsection{Logic and Sets}
+\textit{Contrapositive law}
+\\
+For any Boolean statements $ P, Q $:
+\begin{equation}
+(P \Rightarrow Q) \Leftrightarrow (\neg Q \Rightarrow \neg P)
+\end{equation}
+\\
+To negate any logical statements, we can flip the $ \forall $ and $ \exists $ signs and negate the predicate (the mathematical statement at the end).
+
+\subsection{Complex numbers}
+Complex numbers can be added, subtracted, multiplied and divided.
+\\\\
+For any complex number $ z $,
+\begin{equation}
+z \overline{z} = |z| ^{2}
+\end{equation}
+\\
+For any complex numbers $ z_{1}, z_{2} $:
+\begin{align}
+\overline{z_{1} + z_{2}} & = \overline{z_{1}} + \overline{z_{2}} \\
+\overline{z_{1} - z_{2}} & = \overline{z_{1}} - \overline{z_{2}} \\
+\overline{z_{1} z_{2}} & = \overline{z_{1}} \cdot \overline{z_{2}} \\
+\overline{(\frac{z_{1}}{z_{2}})} & = \frac{\overline{(z_{1})}}{\overline{(z_{2})}} \\
+\overline{(z_{1})^{n}} & = (\overline{z_{1}})^{n}
+\end{align}
+The inverse of a complex number $ z $ is such that:
+\begin{equation}
+z z^{-1} = 1
+\end{equation}
+\\
+Any complex number $ z $ can be represented in exponential form:
+\begin{equation}
+z = r e^{i \theta}
+\end{equation}
+where $ r $ is the modulus of $ z $ and $ \theta $ is the argument.
+\\\\
+\textit{Euler's formula}
+\begin{equation}
+e^{i \theta} = \cos(\theta) + i \sin(\theta)
+\end{equation}
+This can be proven using power series.
+\\\\
+\textit{De Moivre's Theorem}
+\\
+For any complex number $ z $:
+\begin{equation}
+z^{n} = r^{n} (\cos(n \theta) + i \sin(n \theta))
+\end{equation}
+This can be proven by induction or using Euler's formula.
+\\\\
+\textit{Fundamental Theorem of Algebra}
+\\
+Any polynomial of degree $ n $ has $ n $ roots in the complex plane.
+\\\\
+\textit{Roots of unity}
+\\
+Any root of unity (i.e. a solution to $ z^{n} = 1 $) can be expressed in the form:
+\begin{equation}
+z = e^{\frac{2 \pi k i}{n}}, \quad k \in \Z_{\geq 0}
+\end{equation}
+If we let:
+\begin{equation}
+\omega = e^{\frac{2 \pi i}{n}}
+\end{equation}
+then all the $ n^{th} $ roots of unity can be expressed in the form:
+\begin{equation}
+z = 1, \omega, \omega^{2}, \omega^{3} \textrm{ ... } \omega^{n-1}
+\end{equation}
+In general, all $ n^{th} $ roots of a complex number $ a $ can be expressed as:
+\begin{equation}
+z = a, a\omega, a\omega^{2}, a\omega^{3} \textrm{ ... } a\omega^{n-1}
+\end{equation}
+
+\subsection{Proofs and Induction}
+\textit{Counterexample}
+\\
+This involves disproving a statement by providing an example situation where the statement is false.
+\\\\
+\textit{Proof by contradiction}
+\\
+Assume the statement is true and reach a contradiction. This means the statement must be false.
+\\\\
+\textit{Weak induction}
+\\
+If we take $ P $ as a predicate:
+\begin{equation}
+P(0) \land (P(k) \Rightarrow P(k+1)) \Rightarrow P(n) \quad (\forall n)
+\end{equation}
+Note that we do not have to start at 0:
+\begin{equation}
+P(m) \land (P(k) \Rightarrow P(k+1)) \Rightarrow P(n) \quad (\forall n \geq m)
+\end{equation}
+\\
+\textit{Strong induction}
+\\
+If we take $ P $ as a predicate:
+\begin{equation}
+P(0) \land ((\forall j \leq k \ P(j)) \Rightarrow P(k+1)) \Rightarrow P(n) \quad (\forall n)
+\end{equation}
+Note that we do not have to start at 0:
+\begin{equation}
+P(m) \land ((\forall j \leq k \ P(j)) \Rightarrow P(k+1)) \Rightarrow P(n) \quad (\forall n \geq m)
+\end{equation}
+\begin{tcolorbox}[breakable]
+We must prove $ P(k) \Rightarrow P(k+1) $ for weak induction.
+\\
+We must prove $ (\forall j \leq k \ P(j)) \Rightarrow P(k+1) $ for strong induction.
+\\\\
+Strong induction is mathematically equivalent to weak induction.
+\end{tcolorbox}
+
+\subsection{Number Theory}
+There is no smallest positive real number.
+\\\\
+There always exists a real $ n^{th} $ root of a real number (for $ n \in Z_{>0} $).
+\\\\
+The sum/product of any two rational numbers is rational.
+\\\\
+The sum of a rational number and an irrational number is irrational.
+\\
+(proof by contradiction)
+\\\\
+There are infinitely many irrational numbers.
+\\
+(consider $ x_{n} = \sqrt{2} + n $ for $ n \in \Z $)
+\\\\
+$ \Z $ is unbounded in $ \R $ (i.e. for any real number there is always an integer larger than it).
+\\\\
+$ \Q $ is dense in $ \R $.
+\\\\
+$ \R \setminus \Q $ (i.e. the set of irrationals) is dense in $ \R $.
+\\\\
+\textit{Completeness Axiom}
+\\
+A set $ S $ has a least upper bound (sup) iff:
+\begin{itemize}
+\item $ S $ is non-empty
+\item $ S $ is bounded above
+\end{itemize}
+Corresponding statement for greatest lower bound (inf).
+\\\\
+Every real number has a decimal expansion.
+\\
+\begin{tcolorbox}[breakable]
+Assume for simplicity that we have a single digit real number.
+\\
+Let $ d_{n} $ be the sequence of digits and $ e_{n} $ the sequence of error terms, such that $ \forall n \ 0 \leq e_{n} \leq 1 $. We have:
+\begin{equation}
+x = d_{0}.d_{1}d_{2}d_{3}...
+\end{equation}
+Then we can produce the digits by the following steps:
+\begin{align}
+x & = d_{0} + e_{0} \\
+10e_{0} & = d_{1} + e_{1} \\
+10e_{1} & = d_{2} + e_{2} \\
+& \vdots \\
+10e_{n-1} & = d_{n} + e_{n}
+\end{align}
+\end{tcolorbox}
+\noindent
+\\
+A number is rational $ \Leftrightarrow $ it has a periodic decimal expansion.
+\\\\
+Any integer $ a $ has a quotient and remainder when divided by an integer $ b $.
+\\
+(proof by induction on $ a $)
+\\\\
+This quotient and remainder are unique for any $ a $.
+\\
+(proof by contradiction)
+\\\\
+For any $ x \in \Z_{\geq 0} $ and $ \lambda, \mu \in \Z,  (x \ | \ a) \textrm{ and } (x \ | \ b) \Rightarrow (x \ | \  \lambda a + \mu b) $.
+\\
+($ x \ | \ a  $ means "x divides a")
+\\\\
+For any $ x \in \Z_{\geq 0} $, $ (x \ | \ a) \textrm{ and } (x \ | \ b) \Rightarrow (x \ | \ \gcd(a, b)) $.
+\\\\
+If $  (x \ | \ ab) $ but $ \gcd(a, x) = 1 $ then $ (x \ | \ b ) $.
+\\
+(use Bezout's Theorem on $ \gcd(a, x) = 1 $)
+\\
+\begin{tcolorbox}[breakable]
+Note: In general, $ \gcd(a, b) = 1 $ doesn't mean that $ (a \ \centernot| \ b) $, or vice versa.
+\\\\
+The only time that $ \gcd(a, b) = 1 \Leftrightarrow (a \ \centernot| \ b) $ is if one of $ a, b $ are prime. This is because (take $ p $ prime) the only way for $ \gcd(a, p) \neq 1 $ would be if $ a $ is a multiple of $ p $, in which case $ (p \ | \ a) $.
+\end{tcolorbox}
+\noindent
+\\\\
+\textit{Euclid's Algorithm}
+\\
+To find the $ gcd $ of $ a $ and $ b $ where $ a > b $. Write:
+\begin{align}
+a & = q_{1} b + r_{1} \\
+b & = q_{2} r_{1} + r_{2} \\
+r_{1} & = q_{3} r_{2} + r_{3} \\
+& \vdots \\
+r_{n-2} & = q_{n} r_{n-1} + r_{n}
+\end{align}
+Continue until $ r_{n} = 0 $, return $ r_{n-1} $.
+\\
+\begin{tcolorbox}[breakable]
+In Haskell notation, Euclid's algorithm is specified by:
+\begin{verbatim}
+gcd(a, 0) = 0
+gcd(a, b) = gcd(b, a mod b)
+\end{verbatim}
+\end{tcolorbox}
+\noindent
+\\
+\textit{Bezout's Theorem}
+\begin{equation} \label{bezout}
+\gcd(a, b) = \lambda a + \mu b \quad (\textrm{for some } \lambda, \mu \in \R)
+\end{equation}
+(proof by induction)
+\\
+\begin{tcolorbox}[breakable]
+We can write $ a $ and $ b $ as:
+\begin{align}
+a & = \alpha \gcd(a, b) \\
+b & = \beta \gcd(a, b)
+\end{align}
+In general the solution to equation \ref{bezout} is given by:
+\begin{equation}
+\gcd(a, b) = (\lambda + \beta n) a + (\mu - \alpha n) b
+\end{equation}
+noting that the extra terms will always cancel out. So we have a set of solutions ($ \lambda_{n}, \mu_{n} $), where:
+\begin{equation}
+\lambda_{n} = \lambda + \beta n, \quad \mu_{n} = \mu - \alpha n
+\end{equation}
+\end{tcolorbox}
+\noindent
+\\
+If a prime $ p \ | \ a_{1} a_{2} \textrm{...} a_{n} $ for $ a_{i} \in \Z $, then $ p $ divides any of the $ a_{i} $.
+\\
+(proof by induction on $ n $)
+\\\\
+Every integer larger than $ 1 $ can be written as a product of primes.
+\\
+(proof using strong induction)
+\\\\
+\textit{Fundamental Theorem of Arithmetic}
+\\
+Every integer larger than $ 1 $ can be written UNIQUELY as a product of primes.
+\\
+i.e. every such integer can be written as a product of primes $ p_{i}^{x_{i}} $, where each $ p_{i} $ is distinct and every $ x_{i} > 0 $.
+\\
+(proof not needed)
+
+\subsection{Modular arithmetic}
+$ (\equiv \mod m) $ is an equivalence relation.
+\\\\
+If $ a \equiv b \mod m $ and $ c \equiv d \mod m $:
+\begin{align}
+a + c & \equiv b + d \mod m \\
+a - c & \equiv b - d \mod m \\
+ac & \equiv bd \mod m
+\end{align}
+If $ a \equiv b \mod m $, then for any $ n $ :
+\begin{equation}
+a^{n} \equiv b^{n} \mod m
+\end{equation}
+(proof by induction)
+\\\\
+\textit{Fermat's Little Theorem}
+\\
+For any prime $ p $ and $ a \in \Z $:
+\begin{equation}
+a^{p} \equiv a \mod p
+\end{equation}
+(can be proven by induction)
+\\\\
+Also, if $ a $ is not a multiple of $ p $:
+\begin{equation}
+a^{p-1} \equiv 1 \mod p
+\end{equation}
+In the case $ a $ is a multiple of $ p $, we can easily see $ a^{p-1} \equiv 0 \mod p $.
+
+\subsection{Equivalence relations and functions}
+A binary relation $ \sim $ is an equivalence relation iff it is reflexive, symmetric and transitive.
+\\\\
+The equivalence class of $ b \in S $ is the set of all $ s \in S $ such that $ b \sim s $.
+\\\\
+The set of equivalence classes of a set $ S $ form a partition of $ S $. In other words, each equivalence class is a disjoint subset of $ S $.
+\\\\
+A function has an inverse iff it is a bijection.
+\\\\
+If $ f $ and $ g $ are injective, so is $ g \circ f $.
+\\
+If $ f $ and $ g $ are surjective, so is $ g \circ f $.
+\\
+If $ f $ and $ g $ are bijective, so is $ g \circ f $.
+\\\\
+If we define $ X \sim Y $ as "there exists a bijection $ f : X \to Y $", then $ \sim $ is an equivalence relation.
+\\\\
+Let $ P(A) $ denote the power set of a set $ A $.
+\\
+There exists no bijection $ A \to P(A) $.
+\\\\
+\textit{Examples of countably finite/infinite sets}
+\\
+$ \Z, \Q $ are countably infinite.
+\\
+$ \R, \C , \R \setminus \Q $ (set of all irrationals) are uncountably infinite.
+
+\subsection{Combinatorics}
+\textit{Multiplicative principle}
+\\
+In any $ n $-stage process, where the $ r^{th} $ stage can be completed in $ a_{r} $ ways, the total number of was of completing the process is:
+\begin{equation}
+\prod_{r = 0}^{n} a_{r}
+\end{equation}
+i.e. just multiply the number of options together.
+\\\\
+\\
+\textit{Multinomials}
+\\
+When expanding $ (a + b + c + ...)^{n} $, with $ r $ terms inside the brackets, the general term of any coefficient is $ a^{\alpha} b^{\beta} c^{\gamma}... $, where $ \alpha + \beta + \gamma + ... = n $.
+\\
+The coeffient in the expansion for any term $ a^{\alpha} b^{\beta} c^{\gamma}... $ is given by:
+\begin{equation}
+\begin{pmatrix}
+n \\ \alpha,  \beta,  \gamma ...
+\end{pmatrix}
+=
+\frac{n!}{\alpha! \ \beta! \ \gamma! \ ... }
+\end{equation}
+\\
+\begin{tcolorbox}[breakable]
+Note if we set $ r = 2 $ in the above equation we get the familiar binomial coefficient:
+\begin{align}
+\begin{pmatrix}
+n \\ \alpha,  \beta
+\end{pmatrix}
+& =
+\frac{n!}{\alpha! \ \beta!} \\
+& = \frac{n!}{\alpha! \ (n - \alpha)!}
+\end{align}
+since $ \beta = n - \alpha $.
+\end{tcolorbox}
+
+\end{document}
